@@ -7,18 +7,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy NodeJS add
-        uses: appleboy/ssh-action@v0.1.2
-        with:
-          host: ${{secrets.SSH_HOST}}
-          key: ${{secrets.SSH_KEY}}
-          username: ${{ secrets.SSH_USERNAME }}
-          passphrase: ${{ secrets.SERVER_PASSPHRASE }}
-
-
-          script: |
-            mkdir Yurih
-            cd Yurih
-            touch readme.txt
-            git clone@https://github.com/Zedor1S/lab2.git
-            echo 'Deployment succesful to digital ocean1'
+    - name: Deploy NodeJS app
+      uses: appleboy/ssh-action@v0.1.2
+      with:
+        host: ${{secrets.SSH_HOST}}
+        key: ${{secrets.SSH_KEY}}
+        username: ${{ secrets.SSH_USERNAME }}
+        passphrase: ${{ secrets.SERVER_PASSPHRASE }}
+      
+        script: |
+          mkdir Yurii 
+          cd Yurii
+          touch Readme.txt
+          git clone https://github.com/Zedor1S/lab2.git
+          echo 'Deployment successful to digital ocean1'
